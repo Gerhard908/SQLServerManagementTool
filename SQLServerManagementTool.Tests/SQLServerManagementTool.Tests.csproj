@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Domain\" />
+    <Folder Include="Application\" />
+    <Folder Include="Infrastucture\" />
+    <Folder Include="Web\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SQLServerManagementTool.Application\SQLServerManagementTool.Application.csproj" />
+    <ProjectReference Include="..\SQLServerManagementTool.Domain\SQLServerManagementTool.Domain.csproj" />
+    <ProjectReference Include="..\SQLServerManagementTool.Infrastructure\SQLServerManagementTool.Infrastructure.csproj" />
+    <ProjectReference Include="..\SQLServerManagementTool.Web\SQLServerManagementTool.Web.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SQLServerManagementTool.Application\SQLServerManagementTool.Application.csproj" />
+    <ProjectReference Include="..\SQLServerManagementTool.Infrastructure\SQLServerManagementTool.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\Connection\" />
+    <Folder Include="Services\Explorer\" />
+    <Folder Include="Services\Database\" />
+    <Folder Include="Services\Session\" />
+    <Folder Include="Services\Table\" />
+    <Folder Include="ViewModels\Connection\" />
+    <Folder Include="ViewModels\Explorer\" />
+    <Folder Include="ViewModels\Database\" />
+    <Folder Include="ViewModels\Table\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\icons\" />
+    <Folder Include="wwwroot\fonts\" />
+  </ItemGroup>
+
+</Project>
