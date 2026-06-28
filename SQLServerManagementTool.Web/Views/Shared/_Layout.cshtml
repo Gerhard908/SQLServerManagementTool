@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - SQL Server Management Tool</title>
+
+    <link rel="stylesheet" href="~/css/base/variables.css" />
+    <link rel="stylesheet" href="~/css/base/typography.css" />
+    <link rel="stylesheet" href="~/css/layout/header.css" />
+    <link rel="stylesheet" href="~/css/layout/sidebar.css" />
+    <link rel="stylesheet" href="~/css/layout/content.css" />
+    <link rel="stylesheet" href="~/css/layout/footer.css" />
+
+    <link rel="stylesheet" href="~/css/components/cards.css" />
+    <link rel="stylesheet" href="~/css/pages/dashboard.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+
+<body>
+
+    <header class="app-header">
+
+        <div class="logo">
+
+            SQL Server Management Tool
+
+        </div>
+
+        <div>
+
+            Version 1.0
+
+        </div>
+
+    </header>
+
+    <div class="app-shell">
+
+        <aside class="sidebar">
+
+            <ul>
+
+                <li>Connections</li>
+
+                <li>Databases</li>
+
+                <li>Tables</li>
+
+                <li>Views</li>
+
+                <li>Settings</li>
+
+            </ul>
+
+        </aside>
+
+        <main class="content">
+
+            @RenderBody()
+
+        </main>
+
+    </div>
+
+    <footer class="status-bar">
+
+        Ready
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+﻿/*
+==================================================
+Dashboard
+==================================================
+*/
+
+.dashboard {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.dashboard-main {
+    flex: 1;
+}
+
+.dashboard-sidebar {
+    width: 320px;
+}
+
+.dashboard-actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.action-card {
+    flex: 1;
+    transition: .2s;
+}
+
+    .action-card:hover {
+        transform: translateY(-4px);
+    }

@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="SQLServerManagementTool.Application/SQLServerManagementTool.Application.csproj" Id="9788e3fa-ff40-4d86-8abd-05bdf5fcdd7e" />
+  <Project Path="SQLServerManagementTool.Domain/SQLServerManagementTool.Domain.csproj" Id="a44f0583-876e-4449-a394-c51f86f8b2f8" />
+  <Project Path="SQLServerManagementTool.Infrastructure/SQLServerManagementTool.Infrastructure.csproj" Id="98739f2d-8608-4377-81c0-dccf4ca614d1" />
+  <Project Path="SQLServerManagementTool.Tests/SQLServerManagementTool.Tests.csproj" Id="f50311bb-cd8f-4ceb-b035-02c71a105e61" />
+  <Project Path="SQLServerManagementTool.Web/SQLServerManagementTool.Web.csproj" Id="ff6349cf-eb15-45cb-9ce3-24633a907638" />
+</Solution>

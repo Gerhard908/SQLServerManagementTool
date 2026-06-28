@@ -1,0 +1,11 @@
+﻿.app-shell {
+    display: flex;
+    height: calc(100vh - 92px);
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+    overflow: auto;
+    background: var(--background);
+}

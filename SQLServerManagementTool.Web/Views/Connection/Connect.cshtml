@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Connect";
+}
+
+<div class="card">
+
+    <h1>Connect to Database</h1>
+
+    <form method="post">
+
+        <label>Server Name</label>
+        <input type="text" name="ServerName" class="form-control" />
+
+        <label>Authentication</label>
+        <select name="AuthType" class="form-control">
+            <option value="Windows">Windows Authentication</option>
+            <option value="Sql">SQL Server Authentication</option>
+        </select>
+
+        <label>Username</label>
+        <input type="text" name="Username" class="form-control" />
+
+        <label>Password</label>
+        <input type="password" name="Password" class="form-control" />
+
+        <button type="submit" class="btn btn-primary">
+            Test Connection
+        </button>
+
+    </form>
+
+</div>

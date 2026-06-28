@@ -1,0 +1,348 @@
+📘 SQL Server Management Tool
+Coding Standards v1.0 (Official)
+
+Status: Approved
+
+Effective: Immediately
+
+Applies To: Entire Solution
+
+1. General Principles
+
+We will follow:
+
+Clean Architecture
+SOLID Principles
+DRY (Don't Repeat Yourself)
+KISS (Keep It Simple)
+YAGNI (You Aren't Gonna Need It)
+
+Every piece of code should answer:
+
+Does this make the application easier to understand and maintain?
+
+If the answer is no, we rethink it.
+
+2. Project Responsibilities
+Domain
+
+Contains:
+
+Entities
+Interfaces
+Enums
+Value Objects
+Exceptions
+
+Must never reference any other project.
+
+Application
+
+Contains:
+
+Business Logic
+Services
+DTOs
+Validation
+Use Cases
+
+May reference:
+
+Domain
+
+Only.
+
+Infrastructure
+
+Contains:
+
+Entity Framework Core
+SQL Server
+Azure SQL
+Repositories
+Providers
+Logging
+
+May reference:
+
+Domain
+Application
+Web
+
+Contains:
+
+Controllers
+Razor Pages
+ViewModels
+CSS
+JavaScript
+
+May reference:
+
+Application
+Infrastructure
+3. File Structure
+
+One public type per file.
+
+Good:
+
+DatabaseInformation.cs
+
+Bad:
+
+DatabaseStuff.cs
+
+containing six classes.
+
+4. Namespaces
+
+Use file-scoped namespaces.
+
+Good:
+
+namespace SQLServerManagementTool.Domain.Entities;
+
+public class DatabaseInformation
+{
+}
+
+Avoid block-scoped namespaces unless there's a compelling reason.
+
+5. Nullable Reference Types
+
+Enabled.
+
+Always.
+
+No exceptions.
+
+Example:
+
+public string Name { get; set; } = string.Empty;
+
+public string? Description { get; set; }
+
+No nullable warnings should be ignored.
+
+6. Implicit Usings
+
+Enabled.
+
+We'll only add explicit using directives when needed.
+
+7. Naming Convention
+Classes
+
+PascalCase
+
+ConnectionService
+
+DatabaseRepository
+
+ExplorerController
+Interfaces
+
+Prefix with I
+
+IConnectionService
+
+ITableRepository
+
+IDatabaseProvider
+Methods
+
+PascalCase
+
+ConnectAsync()
+
+LoadDatabasesAsync()
+
+DeleteRecordAsync()
+Private Fields
+
+Underscore + camelCase
+
+private readonly ILogger _logger;
+
+private readonly IDatabaseProvider _provider;
+Local Variables
+
+camelCase
+
+var databaseName = "";
+8. Async
+
+Every database operation will be asynchronous.
+
+Good:
+
+await GetDatabasesAsync();
+
+Avoid synchronous database calls.
+
+9. Constructor Injection
+
+Always.
+
+Good:
+
+public ConnectionService(IDatabaseProvider provider)
+{
+    _provider = provider;
+}
+
+Avoid service location or static dependencies.
+
+10. Comments
+
+Write comments to explain why, not what.
+
+Bad:
+
+// Set connection string
+
+Good:
+
+// Store the active connection so metadata queries use the selected server.
+
+Self-explanatory code should not need comments.
+
+11. XML Documentation
+
+We'll add XML comments to public APIs in a later milestone, once the interfaces stabilize.
+
+12. Regions
+
+Do not use #region.
+
+Keep classes small enough that regions aren't necessary.
+
+13. Method Size
+
+Aim for 20–30 lines.
+
+If a method becomes difficult to scan, consider extracting helper methods.
+
+14. Class Size
+
+Target:
+
+200 lines or fewer.
+
+Large classes usually indicate multiple responsibilities.
+
+15. Magic Strings
+
+Avoid them.
+
+Prefer constants or enums where appropriate.
+
+Example:
+
+public const string SqlServerProvider = "SqlServer";
+16. Exceptions
+
+Only throw exceptions when the caller cannot reasonably continue.
+
+Use specific exception types and provide meaningful messages.
+
+17. Logging
+
+We'll use ILogger<T>.
+
+No Console.WriteLine() in application code.
+
+18. UI
+
+No inline CSS.
+
+No inline JavaScript.
+
+Everything belongs in dedicated files under wwwroot.
+
+19. JavaScript
+
+Use plain JavaScript (ES6+).
+
+No jQuery.
+
+No Bootstrap JavaScript.
+
+No frameworks for Version 1.0.
+
+20. CSS
+
+We'll build a custom design system.
+
+Files will be organised like this:
+
+css
+│
+├── variables.css
+├── layout.css
+├── components.css
+├── explorer.css
+├── tables.css
+└── site.css
+
+This gives us reusable styling rather than one large stylesheet.
+
+21. Git
+
+Every milestone ends with:
+
+Build passes.
+Manual testing completed.
+Commit created with a meaningful message.
+
+Example:
+
+feat: implement Explorer shell layout
+
+Not:
+
+fixed stuff
+22. Testing
+
+Every feature should be tested before we move to the next milestone.
+
+A broken build blocks further development.
+
+23. Code Reviews
+
+Before we consider a milestone complete, we'll check:
+
+Architecture
+Naming
+Readability
+Error handling
+Performance
+Consistency
+
+This mirrors a real pull request review.
+
+24. Documentation
+
+When we introduce a new subsystem (for example, Azure SQL support or the CRUD engine), we'll update the documentation to reflect the architecture rather than letting it fall behind the code.
+
+25. Versioning
+
+We'll follow Semantic Versioning:
+
+1.0.0 – First public release
+1.1.0 – New features
+1.1.1 – Bug fixes
+2.0.0 – Breaking architectural changes
+Approved Technology Stack
+Category	Technology
+Framework	ASP.NET Core MVC (.NET 10)
+Language	C# 14
+Database	SQL Server 2022
+Cloud	Azure SQL
+ORM	Entity Framework Core
+IDE	Visual Studio 2026 Enterprise
+DB Tool	SQL Server Management Studio 2022
+UI	Razor Views + Custom CSS + Vanilla JavaScript
+Logging	Microsoft.Extensions.Logging
+Testing	xUnit

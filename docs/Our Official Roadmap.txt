@@ -1,0 +1,48 @@
+📋 Our Official Roadmap
+
+Version 1.0 — Foundation
+-SQL Server support
+-Azure SQL support
+-Database Explorer
+-Table Viewer
+-CRUD Operations
+-Search & Filter
+-Responsive UI
+-Dynamic Metadata
+-Logging
+-Error Handling
+-Documentation
+-Testing
+
+Version 1.1 — Productivity
+-Saved Connections
+-Recent Servers
+-Export (CSV, Excel, JSON)
+-Import Data
+-Pagination
+-Better Search
+-Keyboard Shortcuts
+
+Version 1.2 — Administration
+-Stored Procedures
+-Views
+-Triggers
+-Execute SQL
+-Backup
+-Restore
+-Schema Viewer
+
+Version 1.3 — Monitoring
+-Database Statistics
+-Performance Monitor
+-Query History
+-Connection Diagnostics
+-Health Dashboard
+
+Version 2.0 — Architecture Evolution
+-Vertical Slice Architecture
+-CQRS
+-Enhanced testing strategy
+-Plugin/provider model
+-Performance optimization
+-Refactoring based on lessons learned
