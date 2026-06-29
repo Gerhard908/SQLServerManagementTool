@@ -19,7 +19,6 @@
     <Folder Include="Services\Database\" />
     <Folder Include="Services\Session\" />
     <Folder Include="Services\Table\" />
-    <Folder Include="ViewModels\Connection\" />
     <Folder Include="ViewModels\Explorer\" />
     <Folder Include="ViewModels\Database\" />
     <Folder Include="ViewModels\Table\" />

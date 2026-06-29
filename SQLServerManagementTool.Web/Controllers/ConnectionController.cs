@@ -5,6 +5,7 @@
  */
 
 using Microsoft.AspNetCore.Mvc;
+using SQLServerManagementTool.Web.ViewModels.Connection;
 
 namespace SQLServerManagementTool.Web.Controllers;
 
@@ -21,4 +22,16 @@ public class ConnectionController : Controller
     {
         return View();
     }
+
+    /// <summary>
+    /// Displays the Connection Wizard.
+    /// </summary>
+    [HttpGet]
+    public IActionResult Connect()
+    {
+        var model = new ConnectionViewModel();
+
+        return View(model);
+    }
 }
+

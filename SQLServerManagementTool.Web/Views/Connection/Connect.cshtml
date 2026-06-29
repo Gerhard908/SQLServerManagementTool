@@ -1,30 +1,84 @@
-﻿@{
+﻿@model SQLServerManagementTool.Web.ViewModels.Connection.ConnectionViewModel
+
+@{
     ViewData["Title"] = "Connect";
 }
 
 <div class="card">
 
-    <h1>Connect to Database</h1>
+    <h1>Create Connection</h1>
 
-    <form method="post">
+    <p>
 
-        <label>Server Name</label>
-        <input type="text" name="ServerName" class="form-control" />
+        Enter the SQL Server or Azure SQL connection details.
 
-        <label>Authentication</label>
-        <select name="AuthType" class="form-control">
-            <option value="Windows">Windows Authentication</option>
-            <option value="Sql">SQL Server Authentication</option>
-        </select>
+    </p>
 
-        <label>Username</label>
-        <input type="text" name="Username" class="form-control" />
+    <form asp-action="Connect" method="post">
 
-        <label>Password</label>
-        <input type="password" name="Password" class="form-control" />
+        <div class="form-group">
 
-        <button type="submit" class="btn btn-primary">
+            <label asp-for="ConnectionType"></label>
+
+            <select asp-for="ConnectionType" class="form-control">
+
+                <option value="SQLServer">SQL Server</option>
+                <option value="AzureSQL">Azure SQL</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="ServerName"></label>
+
+            <input asp-for="ServerName" class="form-control" />
+
+            <span asp-validation-for="ServerName"
+                  class="validation-error"></span>
+
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="DatabaseName"></label>
+
+            <input asp-for="DatabaseName" class="form-control" />
+
+        </div>
+
+        <div class="form-group">
+
+            <input asp-for="UseWindowsAuthentication" />
+
+            <label asp-for="UseWindowsAuthentication"></label>
+
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Username"></label>
+
+            <input asp-for="Username"
+                   class="form-control" />
+
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Password"></label>
+
+            <input asp-for="Password"
+                   class="form-control" />
+
+        </div>
+
+        <button class="primary-button"
+                type="submit">
+
             Test Connection
+
         </button>
 
     </form>
